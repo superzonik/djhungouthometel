@@ -1,38 +1,81 @@
-// Default Colors Set
-$default: #444;
-$default-light: #666;
-$default-dark: #222;
+//== COLOR
+$color-a: #000000;
+$color-a-light: #313131;
+$color-b: #2eca6a;
+$color-b-dark: #26a356;
+$color-c: #1B1B1B;
+$color-d: #adadad;
+$color-d-light: #d8d8d8;
+$color-text-a: #555555;
+$color-text-b: #2B2A2A;
+$color-w: #ffffff;
+$color-trans: transparent;
+$color-gray-light: #f3f3f3;
+$opacity: .7;
 
-// Primary Colors Set
-$primary: #4f92af;
-$primary-light: #b1d5e4;
-$primary-dark: #1f566e;
+//== RESPONSIVE
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$sm-max: $sm - 1;
+$md-max: $md - 1;
+$lg-max: $lg - 1;
+$xl-max: $xl - 1;
 
-// Secondary Colors Set
-$secondary: #0d182d;
-$secondary-light: #3c434f;
-$secondary-dark: #000611;
+@mixin breakpoint($mq) {
+  @if $mq==xs {
+    @media (min-width: $xs) {
+      @content;
+    }
+  }
 
-// Link Colors
-$links: #4f92af;
-$links-hover: #5eb8df;
+  @else if $mq==sm {
+    @media (min-width: $sm) {
+      @content;
+    }
+  }
 
-// General Colors
-$red: #dc3545;
-$green: #28a745;
-$blue: #007bff;
-$yellow: #ffc107;
-$orange: #fd7e14;
-$brown: #7b4f2c;
-$purple: #6f42c1;
-$pink: #e83e8c;
-$white: #fff;
-$gray: #6c757d;
-$black: #343a40;
-$teal: #20c997;
-$cyan: #17a2b8;
+  @else if $mq==md {
+    @media (min-width: $md) {
+      @content;
+    }
+  }
 
-/// Fonts
-$font-default: 'Open Sans', sans-serif;
-$font-primary: 'Raleway', sans-serif;
-$font-secondary: 'Raleway', sans-serif;
+  @else if $mq==lg {
+    @media (min-width: $lg) {
+      @content;
+    }
+  }
+
+  @else if $mq==xl {
+    @media (min-width: $xl) {
+      @content;
+    }
+  }
+
+  @else if $mq==sm_max {
+    @media (max-width: $sm-max) {
+      @content;
+    }
+  }
+
+  @else if $mq==md_max {
+    @media (max-width: $md-max) {
+      @content;
+    }
+  }
+
+  @else if $mq==lg_max {
+    @media (max-width: $lg-max) {
+      @content;
+    }
+  }
+
+  @else if $mq==xl_max {
+    @media (max-width: $xl-max) {
+      @content;
+    }
+  }
+}
